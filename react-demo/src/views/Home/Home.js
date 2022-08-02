@@ -1,16 +1,27 @@
 import { useState,useEffect } from "react"
+import {Link} from 'react-router-dom'
 export default function Home(){
   // const [msg, setmsg] = useState('Giovanni')
   // const [num,setnum] = useState(1)
-  useEffect(() => {
-    console.log('页面初始化sss')
-  },[])
+  // useEffect(() => {
+  //   console.log('页面初始化sss')
+  // },[])
+  // 模拟beforeDestory
+  // useEffect(() => {
+  //   return () => {
+  //     console.log('销毁')
+  //   }
+  // })
   return (
     <>
-      {/* <p>{msg}</p>
-      <p>{num}</p>
-      <button onClick={() => setmsg('你好')}>change</button>
-      <button onClick={() => {setnum(num+1)}}>累加</button> */}
+      <ul>
+          <li>
+            <Link to="/home">首页</Link>
+          </li>
+          <li>
+            <Link to="/test">测试</Link>
+          </li>
+        </ul>
     </>
   )
 }
