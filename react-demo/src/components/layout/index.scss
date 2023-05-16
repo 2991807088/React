@@ -1,0 +1,36 @@
+.layout_warp{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header{
+        width: 100vw;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 40px;
+        align-items: center;
+        background-color: antiquewhite;
+        .slogan{
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .logout{
+            font-weight: bold;
+        }
+    }
+    .container{
+        display: flex;
+        flex: 1;
+        flex-flow: row nowrap;
+        .side{
+            width: 260px;
+            background-color: pink;
+        }
+        .content{
+            width: calc(100vw - 260px);
+            background-color: aqua;
+        }
+    }
+}

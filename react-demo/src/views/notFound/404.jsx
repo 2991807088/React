@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 
-export default class NoneMatch extends Component {
-  render() {
-    return <div>404</div>;
-  }
+const NotFound = () => {
+  return (
+    <div>糟糕，要访问的资源丢失了</div>
+  )
 }
+export default NotFound;

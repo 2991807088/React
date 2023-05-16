@@ -1,6 +1,6 @@
-import Login from '../../components/login/index'
+import Login from '@/components/login/index'
 import { useState } from 'react';
-import './Login.scss'
+import './login.scss'
 const Logins = () => {
     const params = {
         username: 'username',

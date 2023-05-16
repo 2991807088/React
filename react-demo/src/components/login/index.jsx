@@ -5,7 +5,7 @@ import React, { memo } from "react";
 const Login = memo((props) => {
 	const navigate = useNavigate();
 	const onFinish = (values) => {
-		navigate("/home");
+		navigate("/");
 		console.log("Success:", values);
 	};
 	const onFinishFailed = (errorInfo) => {
