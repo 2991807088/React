@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
-import { Outlet, Link } from 'react-router-dom'
-export default class App extends Component {
-  render() {
-    return (
-      <>
-        <Outlet></Outlet>
-      </>
-    )
-  }
+import React from 'react'
+import { Outlet, Routes, Route } from 'react-router-dom'
+import Login from '@/views/login/login'
+const App = () => {
+  return (
+    <div>
+      <Routes>
+        <Route path='/' element={<Login/>} />
+      </Routes>
+    </div>
+  )
 }
+export default App
