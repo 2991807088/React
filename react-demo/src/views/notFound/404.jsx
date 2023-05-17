@@ -2,7 +2,7 @@
 
 const NotFound = () => {
   return (
-    <div>糟糕，要访问的资源丢失了</div>
+    <div>糟糕糟糕Oh my god, 魔法怎么失灵啦！！！</div>
   )
 }
 export default NotFound;

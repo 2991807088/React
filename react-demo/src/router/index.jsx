@@ -1,24 +1,36 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from '../App';
-// import Login from '../views/login/login';
-// import Home from '../views/home/home';
-// 定义路由
-const BaseRouter = () => {
-    return (
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
-        // <BrowserRouter>
-        //     <Routes>
-        //         <Route path='/' element={<App/>}>
-        //         {/* <Route path='/' element={<Login/>}></Route> */}
-        //         <Route path='/home' element={<Home/>}></Route>
-        //         <Route path='/list' element={<List/>}></Route>
-        //         <Route path='/detail' element={<Detail/>}></Route>
-        //         <Route path='*' element={<NoneMatch/>}></Route>
-        //     </Route>
-        //     </Routes>
-        // </BrowserRouter>
-    )
-}
-export default BaseRouter
+import React, { lazy } from "react";
+import Auth from '@/utils/auth'
+import lazyLoad from '@/utils/lazyLoad'
+import Layouts from "@/components/layout";
+const Login = lazyLoad(lazy(() => import("@/views/login/login")))
+const Home = lazyLoad(lazy(() => import("@/views/home/home")))
+const Set = lazyLoad(lazy(() => import("@/views/set/set")))
+const NotFound = lazyLoad(lazy(() => import("@/views/notFound/404")))
+
+const routes = [
+    {
+        path: '/',
+        element: <Auth comp={<Layouts />} />,
+        children: [
+            {
+                index: true, // 表示layout布局默认进入此路由
+                element: Home,
+                name: '综合看板'
+            },
+            {
+                path: '/set',
+                element: Set,
+                name: '设置'
+            }
+        ]
+    },
+    {
+        path: '/login',
+        element: Login
+    },
+    {
+        path: '/404',
+        element: NotFound
+    }
+]
+export default routes
